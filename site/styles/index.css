@@ -21,14 +21,16 @@ body {
     height: 100%;
 }
 
+/* Aqui é como eu organizei o conteúdo principal, a aba de atendimento e o footer */
 body {
     background-color: var(--color0);
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 2fr auto;
+    
     grid-template-rows: 1fr auto;
 }
 
-.visually-hidden {   /* Contain text within 1px box */
+h1.visually-hidden {   /* Contain text within 1px box */
   height: 1px; 
   overflow: hidden;
   width: 1px;  /* Keep the layout */  
@@ -39,6 +41,7 @@ body {
   white-space: nowrap;
 } 
 
+/* Essa é parte de edição do conteúdo main */
 .layout-container {
     grid-column: 1;
     grid-row: 1 / span 2;
@@ -70,6 +73,7 @@ div.select-cities {
     color: var(--color3);
 }
 
+/* Funcionamnento e animação do botão de pesquisa. */
 .select-cities .btn-select {
     background-color: var(--color0);
     display: flex;
@@ -128,12 +132,15 @@ li.option:hover {
     background-color: #e1e1e1;
 }
 
+/* Configuração da aba de autoatendimento. */
 aside {
     background-color: var(--color1);
     color: var(--color0);
+
     grid-column: 2;
     grid-row: 1 / span 2;
-    padding: 30% 10% 0 10%;
+    padding: 30% 20px 0;
+
     border-top-left-radius: 84px;
     border-bottom-left-radius: 84px;
     box-shadow: -8px 8px 40px rgba(44, 59, 84, 0.29);
@@ -216,7 +223,7 @@ footer {
     color: var(--color3);
 }
 
-@media (max-width: 838px) {
+@media (max-width: 1000px) {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
