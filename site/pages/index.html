@@ -18,33 +18,44 @@
 </head>
 
 <body>
-    <main>
-        <img src="../images/NetPara-Logo-SF.png" alt="Logo da Net Pará" id="logo">
-        <div class="select-cities">
-            <p>Olá! Por favor, informe a cidade onde você se encontra:</p>
-            <button type="button" class="btn-select">
-                <span>Selecione uma cidade</span><i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <ul class="options-cities">
-                <li class="option" data-city="ipixuna">Ipixuna do Pará</li>
-                <li class="option" data-city="paragominas">Paragominas</li>
-                <li class="option" data-city="forquilha">Vila Forquilha</li>
-                <li class="option" data-city="palmares">Vila Palmares</li>
-            </ul>
-        </div>
-    </main>
-    <aside>
-        <h1 class="callcenter">Autoatendimento</h1>
+    <div class="layout-container">
+        <main>
+            <h1 class="visually-hidden">Net Pará - Provedor de Internet</h1>
+            <img src="../images/NetPara-Logo-SF.png" alt="Logo da Net Pará"
+                id="logo" width="402" height="150">
+            <div class="select-cities">
+                <p>Olá! Por favor, informe a cidade onde você se encontra:</p>
+                <button type="button" class="btn-select" aria-expanded="false" aria-controls="cities-list">
+                    <span>Selecione uma cidade</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul class="options-cities" id="cities-list" role="listbox">
+                    <li class="option" role="option" data-city="ipixuna">Ipixuna do Pará</li>
+                    <li class="option" role="option" data-city="paragominas">Paragominas</li>
+                    <li class="option" role="option" data-city="forquilha">Vila Forquilha</li>
+                    <li class="option" role="option" data-city="palmares">Vila Palmares</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <aside aria-label="Atendimento ao cliente">
+        <h2 class="callcenter">Autoatendimento</h2>
         <p class="callcenter">Seja por ligação ou WhatsApp, estamos aqui todos os dias por você e para você.</p>
-        <p class="callcenter"><i class="fa-solid fa-phone-volume"></i> 800 748 7827</p>
+        <p class="callcenter"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> 0800 748 7827</p>
         <div class="btns-callcenter">
-            <a href="#" target="_blank" id="btn-phone"><i class="fa-solid fa-phone"></i> Ligar</a></button>
-            <a href="#" target="_blank" id="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></button>
+            <a href="tel:08007487827" class="btn-contact btn-phone" aria-label="Ligar para atendimento">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i> Ligar
+            </a>
+            <a href="https://wa.me/#" target="_blank" rel="noopener noreferrer"
+                class="btn-contact btn-whatsapp" aria-label="Abrir WhatsApp (abre em nova aba)">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+            </a>
         </div>
     </aside>
+
     <footer>
-        <p class="copyrights">PARA INOVACOES SERVICOS DE COMUNICACAO LTDA - 09.344.356/0001-17 NetPará 2025. Todos os
-            Direitos Reservados.</p>
+        <p class="copyrights">PARA INOVACOES SERVICOS DE COMUNICACAO LTDA - 09.344.356/0001-17<br>
+            NetPará 2025. Todos os Direitos Reservados.</p>
     </footer>
 </body>
 
