@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Definindo variáveis de cores */
+:root {
+    --color0: #F5F5F5;
+    /* Fundo branco */
+    --color1: #2C3B54;
+    /* Azul escuro */
+    --color2: #0AA0B5;
+    /* Azul petróleo*/
+    --color3: #1B1B1B;
+    /* Texto preto */
+    --color4: #25B468;
+    /* WhatsApp */
+}
+
+/* Configurações inciais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Colocando o body em grid para podermos alinhar */
+body {
+    background-color: var(--color0);
+    display: grid;
+    grid-template-columns: 58% 42%;
+    grid-template-rows: 1fr 50px;
+}
+
+/* Definindo que a parte da seleção de cidades seja ordenzada em coluna */
+main {
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* A imagem está responsiva */
+img#logo {
+    image-rendering: optimizeQuality;
+    width: 100%;
+    max-width: 402px;
+}
+
+/* Defini a largura da div de seleção */
+div.select-cities {
+    width: 380px;
+    margin: 44px auto 0px;
+    color: var(--color3);
+}
+
+/* Configurando o botão de seleção de cidades */
+.select-cities .btn-select {
+    background-color: var(--color0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 56px;
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--color3);
+
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+}
+
+/* A seguir, eis o código para transicionara direção da seta */
+.btn-select i {
+    transition: transform 0.3s ease;
+}
+
+.btn-select.active i {
+    transform: rotate(180deg);
+}
+
+ul.options-cities {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-5px);
+    transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
+
+    text-align: center;
+    list-style: none;
+
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.options-cities.active {
+    max-height: 300px;
+    /* um valor maior que o tamanho real */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+li.option {
+    padding: 16px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: auto;
+    transition: 0.2s ease;
+}
+
+li.option:hover {
+    background-color: #e1e1e1;
+}
+
+aside {
+    background-color: var(--color1);
+    color: var(--color0);
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    padding: 30% 10% 0 10%;
+
+    border-top-left-radius: 84px;
+    border-bottom-left-radius: 84px;
+
+    box-shadow: -8px 8px 40px rgba(44, 59, 84, 0.29);
+}
+
+.callcenter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1.callcenter {
+    font-size: 2.2em;
+}
+
+p.callcenter {
+    font-size: 1em;
+}
+
+div.btns-callcenter {
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+a#btn-whatsapp,
+a#btn-phone {
+    width: 120px;
+    height: 44px;
+    margin: 0 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color0);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+a#btn-whatsapp>i,
+a#btn-phone>i {
+    margin-right: 4px;
+}
+
+#btn-whatsapp {
+    background-color: var(--color4);
+}
+
+#btn-phone {
+    background-color: var(--color2);
+}
+
+#btn-whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px 4px var(--color4);
+}
+
+#btn-phone:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px 4px var(--color2);
+}
+
+footer {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    align-items: center;
+    text-align: center;
+
+    margin: 0 80px 20px;
+    color: var(--color3);
+}
