@@ -26,7 +26,6 @@ body {
     background-color: var(--color0);
     display: grid;
     grid-template-columns: 2fr auto;
-    
     grid-template-rows: 1fr auto;
 }
 

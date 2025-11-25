@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color0: #F5F5F5;
+    --color1: #2C3B54;
+    --color2: #0AA0B5;
+    --color3: #1B1B1B;
+    --color4: #25B468;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Fundo do documento */
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    /* evita scroll horizontal */
+    background-color: var(--color0);
+    padding-top: 108px;
+}
+
+/* Elipse azul à esquerda/baixo */
+body::before {
+    content: '';
+    position: absolute;
+    top: -36%;
+    left: 250px;
+    width: 627px;
+    height: 462px;
+    background: radial-gradient(circle, var(--color2), transparent 40%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Elipse azul à direita/meio */
+body::after {
+    content: '';
+    position: absolute;
+    top: -28%;
+    right: -280px;
+    width: 627px;
+    height: 462px;
+    border-radius: 50%;
+    background: var(--color1);
+    opacity: 1;
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Menu de navegação */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Blur no fundo */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari */
+}
+
+nav.menu {
+    width: 100%;
+    height: 91px;
+    padding: 20px;
+
+    padding-left: 104px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu>ul {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu ul a {
+    width: 153px;
+    height: 53px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color3);
+    transition: .1s;
+}
+
+.menu ul a:hover {
+    background-color: var(--color0);
+    color: var(--color2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu #btn-client {
+    background-color: var(--color1);
+    color: var(--color0);
+    transition: .1s;
+}
+
+.menu #btn-client:hover {
+    background-color: var(--color0);
+    color: var(--color1);
+}
+
+img.logo {
+    image-rendering: optimizeQuality;
+    width: 100%;
+    max-width: 104px;
+    height: auto;
+}
+
+/* Sessão de mensagem */
+main {
+    height: 100%;
+    width: 100%;
+}
+
+section#landing {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+}
+
+div.welcome-message {
+    max-width: 518px;
+    text-align: left;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin: auto;
+}
+
+div.welcome-message h1 {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: var(--color1);
+}
+
+div.welcome-message h2 {
+    font-size: 1.25em;
+    font-weight: 400;
+    color: var(--color2);
+    margin-top: 8px;
+}
+
+#landing>img {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+div.benefits {
+    margin-top: 0px;
+    grid-column: 1;
+    grid-row: 2 / span 2;
+}
+
+div.benefits,
+div.benefits ul {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    color: #1b1b1b69;
+}
+
+div.benefits ul {
+    list-style-type: none;
+}
+
+div.benefits ul>li {
+    max-width: 104px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: 38px;
+}
