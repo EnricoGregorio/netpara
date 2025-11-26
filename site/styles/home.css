@@ -416,4 +416,48 @@ section#business {
     color: #f5f5f571;
 }
 
-#about {}
+#about {
+    width: 100%;
+    height: 100vh;
+    padding: 0 20px;
+    background-color: var(--color0);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    align-items: center;
+}
+
+#about>.title-section {
+    margin-top: 98px;
+    margin-bottom: 48px;
+    font-size: 2.5em;
+    font-weight: 800;
+    text-align: center;
+    color: var(--color1);
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    margin: 0 128px;
+    row-gap: 48px;
+    column-gap: 188px;
+}
+
+.info-container>.info-item-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.info-container>.info-item-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.info-container>.info-item-3 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
