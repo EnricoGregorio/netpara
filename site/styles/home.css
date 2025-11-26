@@ -27,7 +27,7 @@ body {
     overflow-x: hidden;
     /* evita scroll horizontal */
     background-color: var(--color0);
-    padding-top: 108px;
+    padding-top: 91px;
 }
 
 /* Elipse azul à esquerda/baixo */
@@ -151,7 +151,7 @@ main {
 }
 
 section#landing {
-    height: 100%;
+    height: 100vh;
     width: 100%;
 
     display: grid;
@@ -210,7 +210,7 @@ div.benefits ul {
     list-style-type: none;
 }
 
-div.benefits ul > li {
+div.benefits ul>li {
     max-width: 104px;
     display: flex;
     flex-direction: row;
@@ -219,13 +219,13 @@ div.benefits ul > li {
     margin-left: 38px;
 }
 
-div.benefits ul > li > i {
+ul>li>i {
     margin-right: 8px;
 }
 
 /* Sessão planos residenciais */
 section#residential {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-color: #ccc;
     border-radius: 0px 0px 84px 84px;
@@ -233,7 +233,114 @@ section#residential {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+#residential .title-section {
+    font-size: 2.25em;
+    font-weight: 400;
+
+    text-align: center;
+    color: var(--color1);
+
+    margin: 128px auto 65px;
+}
+
+.title-section strong {
+    font-weight: 700;
+}
+
+div.plans {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.plans .card-plan {
+    width: 347px;
+    height: 462px;
+    background-color: var(--color0);
+    border-radius: 24px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-plan .plan-speed {
+    width: 100%;
+    height: 81px;
+    background-color: #0aa1b55c;
+    border-radius: 24px 24px 12px 12px;
+
+    color: var(--color2);
+    font-size: 2.25em;
+    font-weight: 900;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-plan .plan-speed.popular {
+    background-color: var(--color2);
+    color: var(--color0);
+}
+
+.plan-speed>strong {
+    font-weight: 900;
+}
+
+.card-plan>.features {
+    width: 259px;
+    height: 169px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin: 33px auto 15px;
+
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.5em;
+}
+
+.card-plan>.features > li {
+    margin: 16px 0;
+}
+
+.card-plan>.price {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.card-plan>.price>strong {
+    font-size: 2.15em;
+    font-weight: 800;
+    color: var(--color1);
+}
+
+.card-plan > .subs {
+    display: block;
+    width: 280px;
+    height: 64px;
+    margin: 16px auto;
+
+    border-radius: 24px;
+    border: none;
+
+    background-color: var(--color1);
+    color: var(--color0);
+
+    font-size: 1.5em;
+    font-weight: 800;
+    text-align: center;
+    
+    cursor: pointer;
 }
