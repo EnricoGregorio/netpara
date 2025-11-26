@@ -44,6 +44,11 @@ body::before {
     pointer-events: none;
 }
 
+img {
+    image-rendering: optimizeQuality;
+    width: 100%;
+}
+
 /* Elipse azul à direita/meio */
 body::after {
     content: '';
@@ -135,8 +140,6 @@ nav.menu {
 }
 
 img.logo {
-    image-rendering: optimizeQuality;
-    width: 100%;
     max-width: 104px;
     height: auto;
 }
@@ -152,16 +155,19 @@ section#landing {
     width: 100%;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 div.welcome-message {
     max-width: 518px;
     text-align: left;
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    margin: auto;
+    grid-column: 1 / 2;
+    grid-row: 1 / 1;
+    margin: auto auto 50px;
 }
 
 div.welcome-message h1 {
@@ -178,19 +184,21 @@ div.welcome-message h2 {
 }
 
 #landing>img {
-    grid-column: 2;
+    width: 402px;
+    margin-left: 54px;
+    grid-column: 2 / 3;
     grid-row: 1 / span 2;
 }
 
 div.benefits {
-    margin-top: 0px;
-    grid-column: 1;
-    grid-row: 2 / span 2;
+    margin: 50px auto auto;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+    max-width: 518px;
 }
 
 div.benefits,
 div.benefits ul {
-    max-width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -202,11 +210,30 @@ div.benefits ul {
     list-style-type: none;
 }
 
-div.benefits ul>li {
+div.benefits ul > li {
     max-width: 104px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     margin-left: 38px;
+}
+
+div.benefits ul > li > i {
+    margin-right: 8px;
+}
+
+/* Sessão planos residenciais */
+section#residential {
+    height: 100%;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 0px 0px 84px 84px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
