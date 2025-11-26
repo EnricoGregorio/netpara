@@ -344,3 +344,40 @@ div.plans {
     
     cursor: pointer;
 }
+
+/* Sessão planos empresariais */
+
+section#business {
+    width: 100%;
+    height: 430px;
+    background-image: linear-gradient(to bottom, #0AA0B5, #077382);
+    color: var(--color0);
+    padding: 106px 20px 0;
+
+    margin-top: -80px; /* ← invade 100px da seção anterior */
+    position: relative; /* fica por cima */
+    z-index: -1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#business>.message {
+    max-width: 714px;
+    margin-left: 128px;
+}
+
+.message>.title-section {
+    text-align: left;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.message>.text-business-plan {
+    margin-top: 7px;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: left;
+}
