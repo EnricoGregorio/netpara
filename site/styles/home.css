@@ -329,7 +329,7 @@ div.plans {
     font-size: 1.5em;
 }
 
-.features > li {
+.features>li {
     margin: 16px 0;
 }
 
@@ -344,7 +344,7 @@ div.plans {
     color: var(--color1);
 }
 
-.card-plan > .subs {
+.card-plan>.subs {
     display: block;
     width: 280px;
     height: 64px;
@@ -359,12 +359,12 @@ div.plans {
     font-size: 1.5em;
     font-weight: 800;
     text-align: center;
-    
+
     cursor: pointer;
     transition: .1s;
 }
 
-.card-plan > .subs:hover {
+.card-plan>.subs:hover {
     background-color: var(--color2);
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(10, 160, 181, 0.3);
@@ -379,8 +379,10 @@ section#business {
     color: var(--color0);
     padding: 106px 20px 0;
 
-    margin-top: -80px; /* ← invade 100px da seção anterior */
-    position: relative; /* fica por cima */
+    margin-top: -80px;
+    /* ← invade 100px da seção anterior */
+    position: relative;
+    /* fica por cima */
     z-index: -1;
 
     display: flex;
@@ -407,7 +409,7 @@ section#business {
     text-align: left;
 }
 
-.message > .btn-contact {
+.message>.btn-contact {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -429,7 +431,7 @@ section#business {
     transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.message > .btn-contact:hover {
+.message>.btn-contact:hover {
     transform: scale(1.05);
     text-decoration: underline;
 }
@@ -493,19 +495,19 @@ section#business {
     color: var(--color3);
 }
 
-.info > .info-title {
+.info>.info-title {
     color: var(--color2);
     font-size: 2.25em;
     font-weight: 700;
     margin-bottom: 1px;
 }
 
-.info > .vision-title {
+.info>.vision-title {
     font-weight: 600;
     margin: 8px 0;
 }
 
-.info-item-3 > .info-text {
+.info-item-3>.info-text {
     margin-bottom: 36px;
 }
 
@@ -515,7 +517,16 @@ footer {
     background-color: var(--color1);
     color: var(--color0);
     padding: 40px 60px;
-    
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.footer-container {
+    width: 100%;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -576,3 +587,10 @@ footer .contact a {
 footer .contact a:hover {
     color: var(--color2);
 }
+
+footer .copyrights {
+    text-align: center;
+    margin-top: 48px;
+}
+
+/* Sessão para responsividade */

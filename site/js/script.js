@@ -18,3 +18,11 @@ options.forEach(opt => {
         window.location.href = `../pages/home.html?cidade=${cidade}`;
     });
 });
+
+window.onload = function () {
+    // Os comandos abaixo servem para atualizar o ano de direito autoral do site automaticamente.
+    let date = new Date;
+    let year = date.getFullYear();
+
+    window.document.getElementById('copyright-year').innerHTML = year;
+}
