@@ -34,7 +34,7 @@ buttons.forEach(btn => {
 // Parte dos planos:
 // APENAS navegação manual - SEM autoplay
 function initPlansCarousel() {
-    if (window.innerWidth > 768) return;
+    if (window.innerWidth > 923) return;
 
     const plansCarousel = document.getElementById('plans-carousel');
     const cards = plansCarousel.querySelectorAll('.card-plan');
