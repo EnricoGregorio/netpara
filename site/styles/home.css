@@ -21,6 +21,10 @@ body {
     width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
