@@ -26,3 +26,4 @@ window.onload = function () {
 
     window.document.getElementById('copyright-year').innerHTML = year;
 }
+
