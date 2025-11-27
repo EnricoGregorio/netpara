@@ -16,9 +16,10 @@
     <script src="../js/script.js" defer></script>
 </head>
 <body>
+    <h1 class="visually-hidden">Net Pará - Internet Fibra Óptica</h1>
     <header>
         <nav class="menu" aria-label="Menu principal">
-            <a href="#landing" target="_self" aria-label="Ir para a página inicial">
+            <a href="#landing" aria-label="Ir para a página inicial">
                 <img src="../images/NetPara-Logo-SF.png" alt="Logo da Net Pará" class="logo" width="104" height="62">
             </a>
             <ul>
@@ -33,8 +34,8 @@
     <main>
         <section id="landing">
             <div class="welcome-message">
-                <h1>Estamos sempre inovando para você!</h1>
-                <h2>Assine hoje mesmo e desfrute de condições imperdíveis</h2>
+                <h2 class="title-message">Estamos sempre inovando para você!</h2>
+                <p class="subtitle">Assine hoje mesmo e desfrute de condições imperdíveis</p>
             </div>
             <img src="../images/Pessoa2.png" alt="Imagem de uma pessoa sendo feliz." width="402" height="565">
             <div class="benefits">
@@ -50,7 +51,7 @@
         <section id="residential">
             <h2 class="title-section">Navegue, jogue e trabalhe na <strong>máxima performance</strong>.</h2>
             <div class="plans">
-                <div class="card-plan">
+                <article class="card-plan">
                     <h3 class="plan-speed"><strong>250 MEGA</strong></h3>
                     <ul class="features">
                         <li><i class="fa-solid fa-rocket"></i>Fibra óptica</li>
@@ -61,8 +62,8 @@
                     <button type="button" class="subs">
                         Contrate já
                     </button>
-                </div>
-                <div class="card-plan">
+                </article>
+                <article class="card-plan">
                     <h3 class="plan-speed popular"><strong>350 MEGA</strong></h3>
                     <ul class="features">
                         <li><i class="fa-solid fa-rocket"></i><span>Fibra óptica</span></li>
@@ -73,8 +74,8 @@
                     <button type="button" class="subs">
                         Contrate já
                     </button>
-                </div>
-                <div class="card-plan">
+                </article>
+                <article class="card-plan">
                     <h3 class="plan-speed"><strong>500 MEGA</strong></h3>
                     <ul class="features">
                         <li><i class="fa-solid fa-rocket"></i>Fibra óptica</li>
@@ -85,7 +86,7 @@
                     <button type="button" class="subs">
                         Contrate já
                     </button>
-                </div>
+                </article>
             </div>
         </section>
         <section id="business">
@@ -94,7 +95,7 @@
                 <p class="business-plan">Oferecemos soluções sob medida para empresas de todos os tamanhos. Entre em contato e receba uma proposta customizada para as necessidades da sua operação.</p>
                 <a href="https://wa.me/#" target="_blank" rel="noopener noreferrer" class="btn-contact" aria-label="Abrir WhatsApp (abre em nova aba)">Saiba mais</a>
             </div>
-            <p class="bg-icon"><i class="fa-solid fa-globe"></i></p>
+            <div class="bg-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
         </section>
         <section id="about">
             <h2 class="title-section">Sobre nós</h2>
@@ -119,22 +120,25 @@
             </div>
         </section>
     </main>
-    <footer hidden>
+    <footer>
         <img src="../images/NetPara-Logo-SF-branca.png" alt="Logo da Net Pará branco.">
-        <ul>
-            <li><a href="#residential">Para você</a></li>
-            <li><a href="#business">Para o seu negócio</a></li>
-            <li><a href="#about">Sobre nós</a></li>
-            <li><a href="/support">Suporte</a></li>
-            <li><a href="/client">Área do cliente</a></li>
-        </ul>
-        <div>
+        <nav aria-label="Menu do rodapé">
+            <h2 class="visually-hidden">Navegação</h2>
+            <ul>
+                <li><a href="#residential">Para você</a></li>
+                <li><a href="#business">Para o seu negócio</a></li>
+                <li><a href="#about">Sobre nós</a></li>
+                <li><a href="/support">Suporte</a></li>
+                <li><a href="/client">Área do cliente</a></li>
+            </ul>
+        </nav>
+        <div class="contact">
             <h4>Telefone</h4>
-            <p>800 748 7827</p>
+            <a href="tel:08007487827" aria-label="Ligar para atendimento" class="phone">800 748 7827</a>
             <h4>Endereço</h4>
             <p>Rua Santa Terezinha 245, Modulo I, Célio Miranda, Paragominas - PA, CEP 68625080</p>
         </div>
-        <div>
+        <div class="contact">
             <h4>Redes sociais</h4>
             <a href="https://www.instagram.com/netpara.telecom/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram (abre em nova aba)"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/people/NetPará/61554317941637/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook (abre em nova aba)"><i class="fa-brands fa-facebook-f"></i></a>
