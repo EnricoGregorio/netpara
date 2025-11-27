@@ -211,22 +211,28 @@ div.benefits {
     grid-column: 1 / 2;
     grid-row: 2 / 2;
     max-width: 518px;
-}
-
-div.benefits,
-div.benefits ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     align-items: center;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin-left: 20px;
+}
+
+div.benefits ul.carousel {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    animation: scroll 15s linear infinite;
+    width: max-content;
     color: #1b1b1b69;
 }
 
-div.benefits ul {
-    list-style-type: none;
-}
-
-div.benefits ul>li {
+.carousel>li {
     max-width: 104px;
     display: flex;
     flex-direction: row;
@@ -235,13 +241,29 @@ div.benefits ul>li {
     margin-left: 38px;
 }
 
-ul>li>i {
+.carousel li i {
     margin-right: 8px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* move metade (itens duplicados) */
+    }
+}
+
+/* Pausa ao hover */
+.carousel:hover {
+    animation-play-state: paused;
 }
 
 /* Sessão planos residenciais */
 section#residential {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: #ccc;
     border-radius: 0px 0px 84px 84px;
@@ -285,6 +307,7 @@ div.plans {
     background-color: var(--color0);
     border-radius: 24px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 24px;
 }
 
 .card-plan .plan-speed {
@@ -303,7 +326,7 @@ div.plans {
     align-items: center;
 }
 
-.card-plan .plan-speed.popular {
+.card-plan .plan-speed .popular {
     background-color: var(--color2);
     color: var(--color0);
 }
@@ -516,7 +539,7 @@ footer {
     width: 100%;
     background-color: var(--color1);
     color: var(--color0);
-    padding: 40px 60px;
+    padding: 40px 60px 20px;
 
     display: flex;
     flex-direction: column;
@@ -591,6 +614,7 @@ footer .contact a:hover {
 footer .copyrights {
     text-align: center;
     margin-top: 48px;
+    line-height: 28px;
 }
 
 /* Sessão para responsividade */
