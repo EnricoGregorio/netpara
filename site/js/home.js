@@ -8,15 +8,30 @@ window.onload = function () {
     window.document.getElementById('copyright-year').innerHTML = year;
 }
 
-const openBtn = window.document.querySelector(".fa-bars");
-const closeBtn = window.document.querySelector(".fa-xmark");
+// Animação do menu
 
 const buttons = document.querySelectorAll('.menu-toggle');
 const menuBar = document.querySelector('.menu-bar');
+const links = document.querySelectorAll('.link');
 
-buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        menuBar.classList.toggle('active');
+// Função para fechar o menu
+function closeMenu() {
+    menuBar.classList.remove('active');
+
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+
+        const icon = btn.querySelector('.menu-icon');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    });
+}
+
+// Função para alternar o menu
+function toggleMenu() {
+    menuBar.classList.toggle('active');
+
+    buttons.forEach(btn => {
         btn.classList.toggle('active');
 
         const icon = btn.querySelector('.menu-icon');
@@ -29,12 +44,32 @@ buttons.forEach(btn => {
             icon.classList.add('fa-bars');
         }
     });
+}
+
+// Clique no botão do menu
+buttons.forEach(btn => {
+    btn.addEventListener('click', toggleMenu);
+});
+
+// Clique nos links - fecha o menu
+links.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+// Fecha o menu ao clicar fora dele
+document.addEventListener('click', (e) => {
+    const isClickInsideMenu = menuBar.contains(e.target);
+    const isClickOnButton = Array.from(buttons).some(btn => btn.contains(e.target));
+
+    if (!isClickInsideMenu && !isClickOnButton && menuBar.classList.contains('active')) {
+        closeMenu();
+    }
 });
 
 // Parte dos planos:
 // APENAS navegação manual - SEM autoplay
 function initPlansCarousel() {
-    if (window.innerWidth > 923) return;
+    if (window.innerWidth > 768) return;
 
     const plansCarousel = document.getElementById('plans-carousel');
     const cards = plansCarousel.querySelectorAll('.card-plan');
@@ -48,12 +83,12 @@ function initPlansCarousel() {
         currentIndex = index;
         const cardWidth = cards[0].offsetWidth + 20;
         const offset = (plansCarousel.offsetWidth - cardWidth) / 2;
-        
+
         plansCarousel.scrollTo({
             left: (cardWidth * index) - offset,
             behavior: 'smooth'
         });
-        
+
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
         });
@@ -75,7 +110,7 @@ function initPlansCarousel() {
             const offset = (plansCarousel.offsetWidth - cardWidth) / 2;
             const scrollLeft = plansCarousel.scrollLeft + offset;
             const newIndex = Math.round(scrollLeft / cardWidth);
-            
+
             if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
                 currentIndex = newIndex;
                 dots.forEach((dot, i) => {
@@ -95,7 +130,7 @@ function initPlansCarousel() {
 
     plansCarousel.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
-        
+
         if (touchEndX < touchStartX - 50) {
             currentIndex = Math.min(currentIndex + 1, cards.length - 1);
             goToSlide(currentIndex);
