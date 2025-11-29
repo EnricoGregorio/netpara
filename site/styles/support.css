@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color0: #F5F5F5;
+    --color1: #2C3B54;
+    --color2: #0AA0B5;
+    --color3: #1B1B1B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Fundo do documento */
+html,
+body {
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--color0);
+    padding-top: 91px;
+    height: auto;
+}
+
+img {
+    image-rendering: optimizeQuality;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Menu de navegação */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Blur no fundo */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari */
+}
+
+nav.menu {
+    width: 100%;
+    height: 91px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu>.menu-bar {
+    min-width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--color3);
+    cursor: pointer;
+}
+
+.menu ul a {
+    width: 153px;
+    height: 53px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color3);
+    transition: .1s;
+}
+
+.menu ul a:hover {
+    background-color: var(--color0);
+    color: var(--color2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu #btn-client {
+    background-color: var(--color1);
+    color: var(--color0);
+    transition: .1s;
+}
+
+.menu #btn-client:hover {
+    background-color: var(--color0);
+    color: var(--color1);
+}
+
+img.logo {
+    max-width: 104px;
+    height: auto;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: var(--color1);
+    color: var(--color0);
+    padding: 40px 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.footer-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+footer img {
+    max-width: 148px;
+    height: auto;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+footer ul a {
+    color: var(--color0);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer ul a:hover {
+    color: var(--color2);
+}
+
+footer .contact {
+    max-width: 300px;
+}
+
+footer .contact h4 {
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+
+footer .contact p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+footer .contact .phone {
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+footer .contact a {
+    color: var(--color0);
+    font-size: 1.5em;
+    margin-right: 16px;
+    transition: color 0.2s;
+}
+
+footer .contact a:hover {
+    color: var(--color2);
+}
+
+footer .copyrights {
+    text-align: center;
+    margin-top: 48px;
+    line-height: 28px;
+}
+
+@media (max-width: 923px) {
+    header {
+        background-color: var(--color0);
+        border-radius: 0 0 12px 12px;
+    }
+
+    nav.menu {
+        padding-left: 20px;
+        justify-content: space-between;
+    }
+
+    /* Mostrar botão no mobile */
+    .menu-toggle {
+        display: block;
+        margin-right: 28px;
+    }
+
+    .menu-toggle i {
+        transition: transform 0.3s ease;
+    }
+
+    .menu-toggle.active i {
+        transform: rotate(90deg);
+    }
+
+    ul.menu-bar {
+        width: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-5px);
+        transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
+        text-align: center;
+        list-style: none;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-bar.active {
+        width: 100%;
+        min-height: 300px;
+        flex-direction: column;
+        background-color: var(--color0);
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-bar.active li,
+    .menu-bar.active li a {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    footer {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+}
