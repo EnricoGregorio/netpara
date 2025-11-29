@@ -1,6 +1,47 @@
 'use strict';
 
+// Captura a cidade da URL
+function getCityFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('cidade');
+}
+
+// Configurações por cidade
+const cityConfig = {
+    'ipixuna': {
+        title: 'Net Pará | Ipixuna do Pará'
+    },
+    'paragominas': {
+        title: 'Net Pará | Paragominas'
+    },
+    'forquilha': {
+        title: 'Net Pará | Vila Forquilha'
+    },
+    'palmares': {
+        title: 'Net Pará | Vila Palmares'
+    }
+};
+
+function applyCityConfig() {
+    const city = getCityFromURL();
+
+    // Se não tiver cidade na URL, usa padrão
+    if (!city || !cityConfig[city]) {
+        return; // mantém os textos originais do HTML
+    }
+
+    if (city && cityConfig[city]) {
+        const config = cityConfig[city];
+
+        // Altera o título da página
+        document.title = config.title;
+    }
+}
+
 window.onload = function () {
+    // Para aplicar as alterações com base na cidade.
+    applyCityConfig();
+
     // Os comandos abaixo servem para atualizar o ano de direito autoral do site automaticamente.
     let date = new Date;
     let year = date.getFullYear();
