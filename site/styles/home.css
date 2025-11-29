@@ -45,36 +45,6 @@ body {
     height: auto;
 }
 
- /* Elipse azul à esquerda/baixo  */
- /* body::before {
-    content: '';
-    position: absolute;
-    top: -36%;
-    left: 250px;
-    width: 627px;
-    height: 462px;
-    background: radial-gradient(circle, var(--color2), transparent 40%);
-    filter: blur(80px);
-    z-index: -1;
-    pointer-events: none;
-}  */
-
-/* Elipse azul à direita/meio  */
- /* body::after {
-    content: '';
-    position: absolute;
-    top: -28%;
-    right: -280px;
-    width: 627px;
-    height: 462px;
-    border-radius: 50%;
-    background: var(--color1);
-    opacity: 1;
-    filter: blur(80px);
-    z-index: -1;
-    pointer-events: none;
-}  */
-
 img {
     image-rendering: optimizeQuality;
     max-width: 100%;
@@ -656,7 +626,7 @@ footer .copyrights {
     /* Mostrar botão no mobile */
     .menu-toggle {
         display: block;
-        margin-right: 48px;
+        margin-right: 28px;
     }
 
     .menu-toggle i {
