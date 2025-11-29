@@ -703,6 +703,10 @@ footer .copyrights {
         border-radius: 64px 64px 84px 84px;
     }
 
+    .card-plan>.subs {
+        max-width: 260px;
+    }
+
     .plans-carousel-wrapper {
         width: 100%;
         position: relative;
