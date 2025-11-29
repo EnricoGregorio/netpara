@@ -521,10 +521,12 @@ section#business {
 .info>.vision-title {
     font-weight: 600;
     margin: 8px 0;
+    text-align: left;
 }
 
 .info-item-3>.info-text {
     margin-bottom: 36px;
+    text-align: justify;
 }
 
 /* Footer */
