@@ -141,7 +141,96 @@ main {
     height: 100%;
 }
 
+section#faq {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
 
+    color: var(--color1);
+    padding-top: 34px;
+}
+
+#faq>h2 {
+    font-weight: 700;
+    font-size: 2.25em;
+    margin-bottom: 24px;
+}
+
+details.faq-item {
+    text-align: center;
+    max-width: 768px;
+    margin-bottom: 24px;
+
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    user-select: none;
+    list-style: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Remove marcador padrão */
+.faq-item summary::-webkit-details-marker,
+.faq-item summary::marker {
+    display: none;
+}
+
+.faq-item summary:hover {
+    color: var(--color2);
+}
+
+/* Ícone da seta */
+.faq-item summary i {
+    font-size: 0.9em;
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+/* Rotaciona a seta quando aberto */
+.faq-item[open] summary i {
+    transform: rotate(180deg);
+}
+
+/* Container wrapper para animação suave */
+.faq-item>div {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+    overflow: hidden;
+}
+
+.faq-item[open]>div {
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.4s ease;
+}
+
+/* Conteúdo interno (permite overflow) */
+.faq-item>div>* {
+    overflow: hidden;
+}
+
+/* Resposta */
+.faq-answer {
+    overflow: hidden;
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--color3);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+}
+
+.faq-item[open] .faq-answer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s, padding 0.4s ease;
+}
 
 /* Footer */
 footer {
