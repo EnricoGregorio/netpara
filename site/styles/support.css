@@ -5,6 +5,7 @@
     --color1: #2C3B54;
     --color2: #0AA0B5;
     --color3: #1B1B1B;
+    --color4: #25B468;
 }
 
 * {
@@ -239,10 +240,11 @@ details.faq-item {
 /* Sessão de contato */
 section#contact-us {
     max-width: 100%;
+    min-height: 570px;
     display: flex;
     flex-direction: column;
-    margin-top: 116px;
-    padding: 0 128px;
+    margin-top: 128px;
+    padding: 0px 128px 127px;
 }
 
 #contact-us>h2 {
@@ -257,6 +259,113 @@ section#contact-us {
     font-weight: 400;
     text-align: left;
     max-width: 503px;
+    margin-bottom: 32px;
+}
+
+div.container-contacts {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form.message-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: 46px;
+}
+
+input {
+    font-size: 1em;
+    padding: 8px;
+    min-height: 56px;
+    max-width: 500px;
+    margin-bottom: 24px;
+}
+
+aside.card-contact {
+    background-color: var(--color1);
+    color: var(--color0);
+    max-width: 386px;
+    min-height: 468px;
+    padding: 44px 40px 20px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-contact h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.card-contact div.contacts {
+    max-width: 100%;
+    min-height: 162px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.contacts .contact-name {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.contacts .contact-content {
+    color: var(--color0);
+    font-size: 0.9em;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+a.contact-content {
+    transition: color 0.3s ease;
+}
+
+a.contact-content:hover {
+    color: var(--color2);
+}
+
+a.btn-contact {
+    width: 276px;
+    height: 32px;
+    /* margin-top:; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--color4);
+    color: var(--color0);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+a.btn-contact>i {
+    margin-right: 8px;
+    font-size: 1.3em;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px 4px var(--color4);
 }
 
 /* Footer */
