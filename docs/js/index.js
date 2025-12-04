@@ -15,7 +15,7 @@ options.forEach(opt => {
     opt.addEventListener("click", () => {
         const cidade = opt.dataset.city;
 
-        window.location.href = `../pages/home.html?cidade=${cidade}`;
+        window.location.href = `home.html?cidade=${cidade}`;
     });
 });
 
