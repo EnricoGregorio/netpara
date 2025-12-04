@@ -344,7 +344,10 @@ div.plans {
 }
 
 .card-plan>.subs {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: 280px;
     height: 64px;
     margin: 16px auto;
