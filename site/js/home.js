@@ -17,10 +17,12 @@ const cityConfig = {
         location: 'Rua Santa Terezinha 245, Modulo I, Célio Miranda, Paragominas – PA, CEP 68625-080'
     },
     'forquilha': {
-        title: 'Net Pará | Vila Forquilha'
+        title: 'Net Pará | Vila Forquilha',
+        location: 'Rua Nossa Senhora da Conceição, 83, Forquilha - PA, 68680-000'
     },
     'palmares': {
-        title: 'Net Pará | Vila Palmares'
+        title: 'Net Pará | Vila Palmares',
+        location: 'R. Angelim, 42 - Distrito Vila Palmares, Tailândia - PA, 68699-000'
     }
 };
 
