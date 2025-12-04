@@ -240,7 +240,8 @@ details.faq-item {
 /* Sessão de contato */
 section#contact-us {
     max-width: 70%;
-    margin: 128px auto 127px;
+    padding-top: 128px;
+    margin: 0 auto 127px;
     min-height: 570px;
     display: flex;
     flex-direction: column;
