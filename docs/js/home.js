@@ -144,7 +144,7 @@ document.addEventListener('click', (e) => {
 });
 
 // Parte dos planos:
-// APENAS navegação manual - SEM autoplay
+// APENAS navegação manual
 function initPlansCarousel() {
     if (window.innerWidth > 923) return;
 

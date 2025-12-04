@@ -524,7 +524,7 @@ section#business {
 
 .info-item-3>.info-text {
     margin-bottom: 36px;
-    text-align: justify;
+    text-align: center;
 }
 
 /* Footer */
@@ -769,6 +769,10 @@ footer .copyrights {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
+    }
+
+    .info-item-3>.vision-title {
+        text-align: center;
     }
 }
 

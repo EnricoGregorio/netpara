@@ -120,36 +120,34 @@ faqItems.forEach(item => {
         const isOpen = item.hasAttribute('open');
         
         if (isOpen) {
-            // ========== FECHA ==========
-            // 1. Anima conteúdo primeiro
+            // Anima conteúdo primeiro
             answer.style.opacity = '0';
             answer.style.transform = 'translateY(-10px)';
             answer.style.padding = '0';
             
-            // 2. Depois colapsa altura
+            // Depois colapsa altura
             setTimeout(() => {
                 content.style.maxHeight = '0';
             }, 50);
             
-            // 3. Remove atributo open após animação
+            // Remove atributo open após animação
             setTimeout(() => {
                 item.removeAttribute('open');
-            }, 550); // ← IMPORTANTE: espera a transição terminar
+            }, 550); // espera a transição terminar
             
         } else {
-            // ========== ABRE ==========
-            // 1. Adiciona atributo open
+            // Adiciona atributo open
             item.setAttribute('open', '');
             
-            // 2. Calcula altura real
+            // Calcula altura real
             const realHeight = answer.scrollHeight + 32; // padding
             
-            // 3. Expande altura (usa requestAnimationFrame para garantir que CSS foi aplicado)
+            // Expande altura (usa requestAnimationFrame para garantir que CSS foi aplicado)
             requestAnimationFrame(() => {
                 content.style.maxHeight = realHeight + 'px';
             });
             
-            // 4. Anima conteúdo com delay
+            // Anima conteúdo com delay
             setTimeout(() => {
                 answer.style.opacity = '1';
                 answer.style.transform = 'translateY(0)';

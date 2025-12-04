@@ -157,6 +157,7 @@ h2.callcenter {
 
 p.callcenter {
     font-size: 1em;
+    color: var(--color0);
 }
 
 div.btns-callcenter {
