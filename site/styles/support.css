@@ -239,12 +239,11 @@ details.faq-item {
 
 /* Sessão de contato */
 section#contact-us {
-    max-width: 100%;
+    max-width: 70%;
+    margin: 128px auto 127px;
     min-height: 570px;
     display: flex;
     flex-direction: column;
-    margin-top: 128px;
-    padding: 0px 128px 127px;
 }
 
 #contact-us>h2 {
@@ -268,6 +267,7 @@ div.container-contacts {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
 }
 
 form.message-form {
@@ -275,23 +275,59 @@ form.message-form {
     flex-direction: column;
     flex-wrap: nowrap;
     margin-right: 46px;
+    margin-bottom: 28px;
+}
+
+input,
+textarea,
+button.btn-submit {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 input {
     font-size: 1em;
     padding: 8px;
     min-height: 56px;
-    max-width: 500px;
+    width: 500px;
     margin-bottom: 24px;
+
+}
+
+textarea {
+    max-width: 500px;
+    max-height: 500px;
+    padding: 8px;
+}
+
+.btn-submit {
+    margin-top: 24px;
+    background-color: var(--color2);
+    color: var(--color0);
+    height: 48px;
+
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: center;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 2px 4px var(--color2);
 }
 
 aside.card-contact {
     background-color: var(--color1);
     color: var(--color0);
     max-width: 386px;
-    min-height: 468px;
+    height: 468px;
     padding: 44px 40px 20px;
     border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
     display: flex;
     flex-direction: column;
@@ -451,6 +487,38 @@ footer .copyrights {
     line-height: 28px;
 }
 
+/* Responsividade da sessão contact-us */
+@media (max-width: 1355px) {
+    section#contact-us {
+        max-width: 90%;
+        /* margin: 120px 20px; */
+    }
+
+    div.container-contacts {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    form.message-form {
+        margin-right: 0;
+        max-width: 90%;
+    }
+
+    input {
+        font-size: 1em;
+        padding: 8px;
+        min-height: 56px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    textarea {
+        max-width: 100%;
+        max-height: 500px;
+        padding: 8px;
+    }
+}
+
 @media (max-width: 923px) {
     header {
         background-color: var(--color0);
@@ -508,6 +576,7 @@ footer .copyrights {
 
     #faq h2 {
         font-size: 2em;
+        text-align: center;
     }
 
     details.faq-item {
@@ -515,13 +584,16 @@ footer .copyrights {
     }
 
     .faq-answer {
-        /* max-width: 80%; */
         margin: 0 auto;
+    }
+
+    a.btn-contact {
+        height: 46px;
+        font-size: 1.1em;
     }
 }
 
 @media (max-width: 768px) {
-
     footer {
         padding-bottom: 20px;
         text-align: center;
