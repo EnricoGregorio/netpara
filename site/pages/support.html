@@ -13,6 +13,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://kit.fontawesome.com/f156855bd0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("fC3oELsPcUp7ZWOSS");
+        })();
+    </script>
     <script src="../js/support.js" defer></script>
 </head>
 <body>
@@ -81,9 +87,9 @@
         <section id="contact-us">
         <h2>Fale conosco</h2>
         <p>Entre em contato com nosso time de suporte para esclarecer dúvidas, objeções ou fazer uma reclamação.</p>
-        
+        <p id="status-msg"></p>
         <div class="container-contacts">
-            <form action="/enviar-contato" method="post" class="message-form" name="contact-form" aria-label="Formulário de contato">
+            <form class="message-form" name="contact-form" aria-label="Formulário de contato">
                 <label for="fname" class="visually-hidden">Nome completo</label>
                 <input 
                     type="text" 
@@ -112,7 +118,6 @@
                     name="fphone" 
                     id="fphone" 
                     placeholder="Telefone/WhatsApp (xx xxxxx-xxxx)" 
-                    pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
                     autocomplete="tel"
                     required
                     aria-required="true"
@@ -133,7 +138,6 @@
                     <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar mensagem
                 </button>
             </form>
-
             <aside class="card-contact" aria-label="Outras formas de contato">
                 <div class="container-wrapper-ctt">
                     <h3>Outras formas de contato</h3>

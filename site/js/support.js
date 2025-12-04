@@ -158,6 +158,48 @@ faqItems.forEach(item => {
     });
 });
 
+// Validação do telefone:
+function phoneFormatter(value) {
+    // Remove tudo que não é número
+    value = value.replace(/\D/g, '');
+    
+    // Limita a 11 dígitos (DDD + 9 dígitos)
+    value = value.slice(0, 11);
+    
+    // Aplica a formatação
+    if (value.length <= 10) {
+        // Formato: (00) 0000-0000
+        value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+    } else {
+        // Formato: (00) 00000-0000
+        value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+    }
+    
+    return value;
+}
+
+// Seleciona o input de telefone
+const inputPhone = document.getElementById('fphone');
+
+if (inputPhone) {
+    // Formata enquanto digita
+    inputPhone.addEventListener('input', (e) => {
+        e.target.value = phoneFormatter(e.target.value);
+    });
+    
+    // Formata ao sair do campo (blur)
+    inputPhone.addEventListener('blur', (e) => {
+        e.target.value = phoneFormatter(e.target.value);
+    });
+    
+    // Formata ao pressionar Enter ou Tab
+    inputPhone.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === 'Tab') {
+            e.target.value = phoneFormatter(e.target.value);
+        }
+    });
+}
+
 // Atualiza o ano
 window.onload = function () {
     // Para aplicar as alterações com base na cidade.
@@ -170,3 +212,22 @@ window.onload = function () {
         copyrightElement.innerHTML = year;
     }
 }
+
+// Bloco do envio do e-mail:
+const form = document.querySelector(".message-form");
+const statusMsg = document.getElementById("status-msg");
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    statusMsg.textContent = "Enviando...";
+    
+    emailjs.sendForm("service_9ctd3ah", "template_pelyhu6", this)
+        .then(() => {
+            statusMsg.textContent = "Mensagem enviada com sucesso!";
+            form.reset();
+        })
+        .catch((error) => {
+            console.error("Erro:", error);
+            statusMsg.textContent = "Erro ao enviar. Tente novamente.";
+        });
+});

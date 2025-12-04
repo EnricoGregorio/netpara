@@ -293,12 +293,13 @@ input {
     min-height: 56px;
     width: 500px;
     margin-bottom: 24px;
-
 }
 
 textarea {
+    font-size: 1em;
     max-width: 500px;
     max-height: 500px;
+    min-height: 56px;
     padding: 8px;
 }
 
