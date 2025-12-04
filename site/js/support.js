@@ -1,5 +1,51 @@
 'use strict';
 
+// Pegar a cidade de referência das informações:
+// Captura a cidade da URL
+function getCityFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('cidade');
+}
+
+// Configurações por cidade
+const cityConfig = {
+    'ipixuna': {
+        title: 'Suporte Net Pará | Ipixuna do Pará',
+        location: 'Tv. Padre José de Anchieta, Ipixuna do Pará - PA, 68637-000'
+    },
+    'paragominas': {
+        title: 'Suporte Net Pará | Paragominas',
+        location: 'Rua Santa Terezinha 245, Modulo I, Célio Miranda, Paragominas – PA, CEP 68625-080'
+    },
+    'forquilha': {
+        title: 'Suporte Net Pará | Vila Forquilha'
+    },
+    'palmares': {
+        title: 'Suporte Net Pará | Vila Palmares'
+    }
+};
+
+function applyCityConfig() {
+    const city = getCityFromURL();
+
+    // Se não tiver cidade na URL, usa padrão
+    if (!city || !cityConfig[city]) {
+        return; // mantém os textos originais do HTML
+    }
+
+    if (city && cityConfig[city]) {
+        const config = cityConfig[city];
+
+        // Altera o título da página
+        document.title = config.title;
+
+        const local = document.querySelectorAll('.local');
+        local.forEach(elemento => {
+            elemento.textContent = config.location;
+        });
+    }
+}
+
 // Animação do menu
 const buttons = document.querySelectorAll('.menu-toggle');
 const menuBar = document.querySelector('.menu-bar');
@@ -112,6 +158,9 @@ faqItems.forEach(item => {
 
 // Atualiza o ano
 window.onload = function () {
+    // Para aplicar as alterações com base na cidade.
+    applyCityConfig();
+
     let date = new Date();
     let year = date.getFullYear();
     const copyrightElement = document.getElementById('copyright-year');

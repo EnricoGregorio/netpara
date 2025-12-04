@@ -9,10 +9,12 @@ function getCityFromURL() {
 // Configurações por cidade
 const cityConfig = {
     'ipixuna': {
-        title: 'Net Pará | Ipixuna do Pará'
+        title: 'Net Pará | Ipixuna do Pará',
+        location: 'Tv. Padre José de Anchieta, Ipixuna do Pará - PA, 68637-000'
     },
     'paragominas': {
-        title: 'Net Pará | Paragominas'
+        title: 'Net Pará | Paragominas',
+        location: 'Rua Santa Terezinha 245, Modulo I, Célio Miranda, Paragominas – PA, CEP 68625-080'
     },
     'forquilha': {
         title: 'Net Pará | Vila Forquilha'
@@ -35,6 +37,11 @@ function applyCityConfig() {
 
         // Altera o título da página
         document.title = config.title;
+
+        const local = document.querySelectorAll('.local');
+        local.forEach(elemento => {
+            elemento.textContent = config.location;
+        });
     }
 }
 
@@ -48,6 +55,33 @@ window.onload = function () {
 
     window.document.getElementById('copyright-year').innerHTML = year;
 }
+
+// Bloco para passar a cidade selecionada para a próxima página.
+function passCityToLinks() {
+    const cidade = getCityFromURL();
+    
+    if (cidade) {
+        // Seleciona TODOS os links de Suporte
+        const linksSupport = document.querySelectorAll('a[href*="support.html"]');
+        
+        linksSupport.forEach(link => {
+            const url = new URL(link.href);
+            url.searchParams.set('cidade', cidade);
+            link.href = url.toString();
+        });
+        
+        // Também para links do footer
+        const linksClient = document.querySelectorAll('a[href*="client"]');
+        linksClient.forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            url.searchParams.set('cidade', cidade);
+            link.href = url.toString();
+        });
+    }
+}
+
+// Executa ao carregar
+window.addEventListener('DOMContentLoaded', passCityToLinks);
 
 // Animação do menu
 

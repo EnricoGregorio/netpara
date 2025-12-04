@@ -501,7 +501,7 @@ footer .copyrights {
     }
 
     form.message-form {
-        margin-right: 0;
+        margin-right: 24px;
         max-width: 90%;
     }
 
@@ -591,6 +591,10 @@ footer .copyrights {
     a.btn-contact {
         height: 46px;
         font-size: 1.1em;
+    }
+
+    form.message-form {
+        margin-right: 0;
     }
 }
 
