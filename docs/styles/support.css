@@ -239,7 +239,8 @@ details.faq-item {
 
 /* Sessão de contato */
 section#contact-us {
-    max-width: 70%;
+    max-width: 1280px;
+    width: 100%;
     padding-top: 128px;
     margin: 0 auto 127px;
     min-height: 570px;
@@ -420,8 +421,8 @@ footer {
 }
 
 .footer-container {
+    max-width: 1280px;
     width: 100%;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

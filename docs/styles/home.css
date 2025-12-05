@@ -141,9 +141,15 @@ main {
     width: 100%;
 }
 
+.container-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 section#landing {
     min-height: 100vh;
-    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
 
     display: grid;
     grid-template-columns: auto auto;
@@ -400,7 +406,7 @@ section#business {
 
 #business>.message {
     max-width: 688px;
-    margin-left: 128px;
+    margin-left: 20%;
     z-index: 2;
     position: relative;
 }
@@ -447,7 +453,7 @@ section#business {
 
 #business>.bg-icon {
     position: absolute;
-    right: -16%;
+    right: 12%;
     top: 60%;
     transform: translateY(-50%);
     z-index: 1;
@@ -487,6 +493,7 @@ section#business {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
+    max-width: 1280px;
     margin: 0 10%;
     row-gap: 48px;
     column-gap: 188px;
@@ -544,8 +551,8 @@ footer {
 }
 
 .footer-container {
+    max-width: 1280px;
     width: 100%;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
