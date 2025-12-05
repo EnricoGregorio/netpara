@@ -50,6 +50,11 @@ img {
     height: auto;
 }
 
+a.link-home {
+    color: var(--color0);
+    text-decoration: none;
+}
+
 /* Menu de navegação */
 header {
     position: fixed;
@@ -476,9 +481,13 @@ footer .contact .phone {
 
 footer .contact a {
     color: var(--color0);
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+footer .contact a.icon {
     font-size: 1.5em;
     margin-right: 16px;
-    transition: color 0.2s;
 }
 
 footer .contact a:hover {
