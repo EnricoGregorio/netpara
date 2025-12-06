@@ -398,10 +398,9 @@ div.plans {
 /* Sessão planos empresariais */
 section#business {
     width: 100%;
-    min-height: 430px;
     background-image: linear-gradient(to bottom, #0AA0B5, #077382);
     color: var(--color0);
-    padding: 106px 20px 0;
+    padding: 80px 20px 0;
 
     margin-top: -80px;
     position: relative;
@@ -422,8 +421,7 @@ div.business-container {
 
 #business .message {
     max-width: 600px;
-    z-index: 2;
-    position: relative;
+    margin-top: 32px;
 }
 
 .message>.title-section {
@@ -466,17 +464,9 @@ div.business-container {
     text-decoration: underline;
 }
 
-.business-container .bg-icon {
-    position: absolute;
-    right: 20%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
 #business .bg-icon>i {
-    font-size: 668px;
-    margin-top: -20px;
+    margin: -10px 0;
+    font-size: 400px;
     transform: rotate(-45deg);
     color: #f5f5f571;
 }
@@ -924,6 +914,11 @@ footer .copyrights {
         text-align: center;
     }
 
+    section#business {
+        min-height: 430px;
+        /* height: 100vh; */
+    }
+
     #faq h2 {
         font-size: 2em;
         text-align: center;
@@ -975,7 +970,13 @@ footer .copyrights {
     }
 
     #business .message {
-        margin-left: 0;
+        z-index: 2;
+        position: relative;
+    }
+
+    #business .bg-icon {
+        position: absolute;
+        z-index: 1;
     }
 
     #business .bg-icon>i {
