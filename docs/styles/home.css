@@ -155,16 +155,20 @@ main {
 }
 
 section#landing {
-    min-height: 100vh;
+    min-height: 90vh;
+    width: 100%;
+    padding: 44px 40px 64px;
+}
+
+div.landing-container {
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     align-content: center;
     justify-content: center;
-    padding: 0 40px;
 }
 
 div.welcome-message {
@@ -188,8 +192,8 @@ div.welcome-message .subtitle {
     margin-top: 8px;
 }
 
-#landing>img {
-    width: 402px;
+div.landing-container>img {
+    width: 502px;
     margin-left: 10%;
     grid-column: 2 / 3;
     grid-row: 1 / 3;
@@ -217,7 +221,7 @@ div.benefits ul.carousel {
     flex-direction: row;
     list-style-type: none;
     align-items: center;
-    animation: scroll 15s linear infinite;
+    animation: scroll 10s linear infinite;
     width: max-content;
     color: #1b1b1b69;
 }
@@ -392,7 +396,6 @@ div.plans {
 }
 
 /* Sessão planos empresariais */
-
 section#business {
     width: 100%;
     min-height: 430px;
@@ -403,6 +406,11 @@ section#business {
     margin-top: -80px;
     position: relative;
     z-index: -1;
+}
+
+div.business-container {
+    max-width: 1130px;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: row;
@@ -412,9 +420,8 @@ section#business {
     overflow: hidden;
 }
 
-#business>.message {
-    max-width: 688px;
-    margin-left: 20%;
+#business .message {
+    max-width: 600px;
     z-index: 2;
     position: relative;
 }
@@ -459,15 +466,15 @@ section#business {
     text-decoration: underline;
 }
 
-#business>.bg-icon {
+.business-container .bg-icon {
     position: absolute;
-    right: 12%;
-    top: 60%;
+    right: 20%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 1;
 }
 
-#business>.bg-icon>i {
+#business .bg-icon>i {
     font-size: 668px;
     margin-top: -20px;
     transform: rotate(-45deg);
@@ -563,6 +570,101 @@ div.values-container {
     grid-column: 1 / span 2;
     grid-row: 2;
     margin: 0 auto;
+}
+
+section#faq {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    color: var(--color1);
+    max-width: 100%;
+    margin: 32px 0;
+}
+
+#faq>h2 {
+    font-weight: 700;
+    font-size: 2.25em;
+    margin-bottom: 24px;
+}
+
+details.faq-item {
+    text-align: center;
+    width: 100%;
+    max-width: 768px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: color 0.3s ease;
+
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--color1);
+}
+
+/* Remove marcador padrão */
+.faq-item summary::-webkit-details-marker,
+.faq-item summary::marker {
+    display: none;
+}
+
+.faq-item summary:hover {
+    color: var(--color2);
+}
+
+/* Ícone da seta */
+.faq-item summary i {
+    font-size: 1em;
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+/* Rotaciona a seta quando aberto */
+.faq-item[open] summary i {
+    transform: rotate(180deg);
+}
+
+/* Container wrapper para animação suave */
+.faq-item>div {
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.faq-item[open]>div {
+    max-height: 500px;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Conteúdo interno (permite overflow) */
+.faq-item>div>* {
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Resposta */
+.faq-answer {
+    overflow: hidden;
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--color3);
+    margin-top: 6px;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.faq-item[open] .faq-answer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s, padding 0.4s ease;
 }
 
 /* Footer */
@@ -807,7 +909,8 @@ footer .copyrights {
         border-radius: 5px;
     }
 
-    .info-container, div.values-container {
+    .info-container,
+    div.values-container {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -819,6 +922,19 @@ footer .copyrights {
 
     .info-item-3>.value-title {
         text-align: center;
+    }
+
+    #faq h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    details.faq-item {
+        max-width: 90%;
+    }
+
+    .faq-answer {
+        margin: 0 auto;
     }
 }
 
@@ -862,7 +978,7 @@ footer .copyrights {
         margin-left: 0;
     }
 
-    #business>.bg-icon>i {
+    #business .bg-icon>i {
         color: #f5f5f50f;
     }
 

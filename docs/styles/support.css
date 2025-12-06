@@ -185,6 +185,8 @@ div.container-contacts {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 form.message-form {
@@ -320,101 +322,6 @@ a.btn-contact>i {
 .btn-whatsapp:hover {
     transform: scale(1.05);
     box-shadow: 0 0 18px 4px var(--color4);
-}
-
-section#faq {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-
-    color: var(--color1);
-    max-width: 100%;
-    margin-bottom: 32px;
-}
-
-#faq>h2 {
-    font-weight: 700;
-    font-size: 2.25em;
-    margin-bottom: 24px;
-}
-
-details.faq-item {
-    text-align: center;
-    width: 100%;
-    max-width: 768px;
-    margin-bottom: 24px;
-    overflow: hidden;
-}
-
-.faq-item summary {
-    cursor: pointer;
-    list-style: none;
-    user-select: none;
-    transition: color 0.3s ease;
-
-    font-size: 1em;
-    font-weight: 400;
-    color: var(--color1);
-}
-
-/* Remove marcador padrão */
-.faq-item summary::-webkit-details-marker,
-.faq-item summary::marker {
-    display: none;
-}
-
-.faq-item summary:hover {
-    color: var(--color2);
-}
-
-/* Ícone da seta */
-.faq-item summary i {
-    font-size: 1em;
-    transition: transform 0.4s ease;
-    flex-shrink: 0;
-    margin-left: 12px;
-}
-
-/* Rotaciona a seta quando aberto */
-.faq-item[open] summary i {
-    transform: rotate(180deg);
-}
-
-/* Container wrapper para animação suave */
-.faq-item>div {
-    text-align: center;
-    max-height: 0;
-    overflow: hidden;
-}
-
-.faq-item[open]>div {
-    max-height: 500px;
-    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Conteúdo interno (permite overflow) */
-.faq-item>div>* {
-    min-height: 0;
-    overflow: hidden;
-}
-
-/* Resposta */
-.faq-answer {
-    overflow: hidden;
-    font-size: 1em;
-    line-height: 1.6;
-    color: var(--color3);
-    margin-top: 6px;
-    opacity: 0;
-    transform: translateY(-8px);
-}
-
-.faq-item[open] .faq-answer {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s, padding 0.4s ease;
 }
 
 /* Footer */
@@ -589,19 +496,6 @@ footer .copyrights {
         height: 100%;
         border-radius: 0;
         margin: 0;
-    }
-
-    #faq h2 {
-        font-size: 2em;
-        text-align: center;
-    }
-
-    details.faq-item {
-        max-width: 90%;
-    }
-
-    .faq-answer {
-        margin: 0 auto;
     }
 
     a.btn-contact {
